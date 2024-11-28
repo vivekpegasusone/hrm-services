@@ -3,7 +3,6 @@ package com.whizzy.hrm.multitenant.resolver;
 import com.whizzy.hrm.multitenant.converter.CryptoService;
 import com.whizzy.hrm.multitenant.domain.Tenant;
 import com.whizzy.hrm.multitenant.service.TenantService;
-import com.whizzy.hrm.multitenant.service.impl.TenantServiceImpl;
 import com.zaxxer.hikari.HikariDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +40,7 @@ public class TenantDataSourceLookup extends MapDataSourceLookup {
             HikariDataSource dataSource = createDataSource(t, t.getName());
             addDataSource(t.getName(), dataSource);
         });
-        log.info("Application context started at (). Total {} tenant datasources found.", contextRefreshedEvent.getApplicationContext().getStartupDate(), tenants.size());
+        log.info("Application context started at {}. Total {} tenant data sources found.", contextRefreshedEvent.getApplicationContext().getStartupDate(), tenants.size());
     }
 
     private HikariDataSource createDataSource(Tenant tenant, String schema) {
