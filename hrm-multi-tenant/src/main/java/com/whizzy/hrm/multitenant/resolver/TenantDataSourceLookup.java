@@ -3,7 +3,10 @@ package com.whizzy.hrm.multitenant.resolver;
 import com.whizzy.hrm.multitenant.converter.CryptoService;
 import com.whizzy.hrm.multitenant.domain.Tenant;
 import com.whizzy.hrm.multitenant.service.TenantService;
+import com.whizzy.hrm.multitenant.service.impl.TenantServiceImpl;
 import com.zaxxer.hikari.HikariDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
@@ -18,6 +21,8 @@ import static org.springframework.util.StringUtils.hasLength;
 
 @Component
 public class TenantDataSourceLookup extends MapDataSourceLookup {
+
+    private static final Logger log = LoggerFactory.getLogger(TenantDataSourceLookup.class);
 
     private final CryptoService cryptoService;
     private final ApplicationContext applicationContext;
@@ -36,6 +41,7 @@ public class TenantDataSourceLookup extends MapDataSourceLookup {
             HikariDataSource dataSource = createDataSource(t, t.getName());
             addDataSource(t.getName(), dataSource);
         });
+        log.info("Application context started at (). Total {} tenant datasources found.", contextRefreshedEvent.getApplicationContext().getStartupDate(), tenants.size());
     }
 
     private HikariDataSource createDataSource(Tenant tenant, String schema) {
