@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: hrm-multi-tenant
+
+master:
+  datasource:
+    username: root
+    password: VB9vUergflhaSpEDhEXsRw==
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: "jdbc:mysql://localhost:3306/tenant_master?useSSL=false&allowPublicKeyRetrieval=true"
+    max-lifetime: 1800000
+    minimum-idle: 2
+    keepalive-time: 120000
+    maximum-pool-size: 2
+    connection-timeout: 30000
+
+tenant:
+  package:
+    scan: com.whizzy.hrm
+
+encryption:
+  salt: "tyk@8hr34#9sdklf"
+  secret: "sk$h43k&fd34ldsk"
+  algorithm: "AES/CBC/PKCS5PADDING"
