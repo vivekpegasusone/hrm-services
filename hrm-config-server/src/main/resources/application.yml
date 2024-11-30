@@ -1,0 +1,15 @@
+server:
+  port: 8191
+
+spring:
+  application:
+    name: hrm-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/vivekpegasusone/hrm-configuration.git
+          search-paths:
+            - 'service-configuration/hrm*service'
+          #username: vivekpegasusone
+          #password:

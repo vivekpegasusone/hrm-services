@@ -18,8 +18,8 @@ CREATE TABLE `tenant_data_source` (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `UK_TENANT_DATA_SOURCE_NAME_MODULE` (`tenant`,`module`)
 ) 
-
+-- root encrypted to VB9vUergflhaSpEDhEXsRw==
 INSERT INTO `tenant_master`.`tenant_data_source` (`id`, `tenant`, `module`, `url`, `user_name`, `password`, `driver_class_name`,
-	`is_active`, `maximum_pool_size`, `minimum_idle`, `max_lifetime`, `keep_alive_time`, `connection_timeout`)
-VALUES(1, 'drishti', 'user', 'jdbc:mysql://localhost:3306/anpl_user?useSSL=false','root', 'root', 'com.mysql.cj.jdbc.Driver',
-	1, 10, 10, 1800000, 120000, 30000);
+`is_active`, `maximum_pool_size`, `minimum_idle`, `max_lifetime`, `keep_alive_time`, `connection_timeout`)
+VALUES(1, 'drishti', 'user', 'jdbc:mysql://localhost:3306/anpl_user?useSSL=false','root', 'VB9vUergflhaSpEDhEXsRw==',
+'com.mysql.cj.jdbc.Driver', 1, 10, 10, 1800000, 120000, 30000);
