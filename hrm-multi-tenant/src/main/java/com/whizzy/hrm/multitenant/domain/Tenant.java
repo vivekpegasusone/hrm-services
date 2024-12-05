@@ -20,7 +20,7 @@ public class Tenant implements Serializable {
     private static final long serialVersionUID = 3210275181684883952L;
 
     @Id
-    private long id;
+    private Long id;
 
     @NotNull
     @Column(name = "tenant", nullable = false)

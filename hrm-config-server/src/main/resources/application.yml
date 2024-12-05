@@ -10,6 +10,6 @@ spring:
         git:
           uri: https://github.com/vivekpegasusone/hrm-configuration.git
           search-paths:
-            - 'service-configuration/hrm*service'
+            - 'service-configuration/hrm-*'
           #username: vivekpegasusone
           #password:

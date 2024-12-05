@@ -2,10 +2,9 @@ spring:
   application:
     name: hrm-multi-tenant
   jpa:
-    properties:
-      show-sql: true
-      hibernate:
-        ddl-auto: none
+    show_sql: true
+    hibernate:
+      ddl-auto: none
 
 master:
   datasource:
