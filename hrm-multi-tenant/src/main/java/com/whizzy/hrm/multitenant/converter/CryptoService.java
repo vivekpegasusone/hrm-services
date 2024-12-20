@@ -16,7 +16,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 @Component
-public class CryptoService {
+public class CryptoService { // not needed
 
     private final String salt;
     private final String secret;
