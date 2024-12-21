@@ -25,4 +25,3 @@ tenant:
 encryption:
   salt: "tyk@8hr34#9sdklf"
   secret: "sk$h43k&fd34ldsk"
-  algorithm: "AES/CBC/PKCS5PADDING"

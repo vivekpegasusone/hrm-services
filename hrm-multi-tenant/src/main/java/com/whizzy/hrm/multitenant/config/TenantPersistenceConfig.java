@@ -38,7 +38,7 @@ public class TenantPersistenceConfig {
     private final TenantResolver tenantResolver;
     private final TenantConnectionProvider connectionProvider;
 
-    @Value("${tenant.package.scan}")
+    @Value("${tenant.package.scan:#{null}}")
     private String tenantPackage;
 
     public TenantPersistenceConfig(TenantResolver tenantResolver, TenantConnectionProvider connectionProvider, JpaProperties jpaProperties) {
