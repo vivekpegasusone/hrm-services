@@ -1,4 +1,4 @@
-package com.whizzy.hrm.multitenant.converter;
+package com.whizzy.hrm.multitenant.crypto;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -16,18 +16,16 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 @Component
-public class CryptoService { // not needed
+public class CryptoService {
 
     private final String salt;
     private final String secret;
-    private final String algorithm;
+    private final String algorithm = "AES/CBC/PKCS5PADDING";
 
     public CryptoService(@Value("${encryption.salt}") String salt,
-                         @Value("${encryption.secret}") String secret,
-                         @Value("${encryption.algorithm}") String algorithm) {
+                         @Value("${encryption.secret}") String secret) {
         this.salt = salt;
         this.secret = secret;
-        this.algorithm = algorithm;
     }
 
     public String encrypt(String plainText) {

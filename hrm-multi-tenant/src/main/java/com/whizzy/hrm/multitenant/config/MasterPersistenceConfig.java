@@ -1,6 +1,6 @@
 package com.whizzy.hrm.multitenant.config;
 
-import com.whizzy.hrm.multitenant.converter.CryptoService;
+import com.whizzy.hrm.multitenant.crypto.CryptoService;
 import com.whizzy.hrm.multitenant.domain.Tenant;
 import com.zaxxer.hikari.HikariDataSource;
 import jakarta.persistence.EntityManagerFactory;

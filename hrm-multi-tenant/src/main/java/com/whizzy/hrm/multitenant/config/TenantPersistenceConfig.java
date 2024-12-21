@@ -53,7 +53,7 @@ public class TenantPersistenceConfig {
         LocalContainerEntityManagerFactoryBean emFactory = new LocalContainerEntityManagerFactoryBean();
 
         emFactory.setPersistenceUnitName(TENANT_PERSISTENT_UNIT);
-        emFactory.setPackagesToScan(this.tenantPackage);
+        emFactory.setPackagesToScan(this.tenantPackage != null ? this.tenantPackage : "com.whizzy.hrm");
 
         emFactory.setJpaVendorAdapter(getJpaVendorAdapter());
         emFactory.setJpaPropertyMap(getJpaPropertyMap());

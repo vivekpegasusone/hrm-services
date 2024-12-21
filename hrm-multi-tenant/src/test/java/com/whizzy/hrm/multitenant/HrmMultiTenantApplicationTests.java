@@ -1,6 +1,6 @@
 package com.whizzy.hrm.multitenant;
 
-import com.whizzy.hrm.multitenant.converter.CryptoService;
+import com.whizzy.hrm.multitenant.crypto.CryptoService;
 import com.whizzy.hrm.multitenant.domain.Tenant;
 import com.whizzy.hrm.multitenant.resolver.TenantConnectionProvider;
 import com.whizzy.hrm.multitenant.resolver.TenantDataSourceLookup;
