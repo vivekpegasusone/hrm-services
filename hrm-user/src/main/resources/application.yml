@@ -2,6 +2,6 @@ spring:
   profiles:
     active: dev
   application:
-    name: hrm-user-service
+    name: hrm-user
   config:
     import: "optional:configserver:http://localhost:8191"
